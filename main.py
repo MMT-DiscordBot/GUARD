@@ -1,4 +1,5 @@
 import os
+import json
 
 import discord
 from discord.ext import commands
@@ -19,4 +20,6 @@ async def on_ready():
                 bot.load_extension(path[2:-3].replace('/', '.'))
 
 if __name__ == '__main__':
-    bot.run('NjA5MjA0NzUzODUwODI2NzY0.XUzUIw.mN6r1FYrt8hg4bZrLZmtX_xMCW4')
+    with open('conf.json', mode='r') as f:
+        conf = json.loads(f.read())
+    bot.run(conf['token'])
