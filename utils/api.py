@@ -12,16 +12,16 @@ def command(mode):
         slash_command(),
     ][mode]
 
-def get_everyone_role(guild):
+def get_everyone_role(guild: discord.Guild) -> discord.Role:
     return guild.roles[0]
 
-def is_everyone_mentionable(role):
+def is_everyone_mentionable(role: discord.Role) -> bool:
     return role.permissions.mention_everyone
 
 
 
 
-def safety_embed_message(info):
+def safety_embed_message(info: dict) -> discord.Emed:
     embed = discord.Embed(title='安全檢測', description='檢測有可能危害伺服器的問題')
 
     if info['everyone_mentionable']:

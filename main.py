@@ -7,12 +7,12 @@ from discord.ext import commands
 bot = commands.Bot(command_prefix='g.', intents=discord.Intents.all())
 
 @bot.event
-async def on_message(msg):
+async def on_message(msg: discord.Message) -> None:
     print(msg)
     await bot.process_commands(msg)
 
 @bot.event
-async def on_ready():
+async def on_ready() -> None:
     print('-- Bot ready --')
     for root, _, files in os.walk('./cogs'):
         for file in files:
