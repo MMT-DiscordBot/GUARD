@@ -1,6 +1,6 @@
 import os
 import json
-
+from glob import glob
 import discord
 from discord.ext import commands
 
@@ -15,7 +15,7 @@ bot = commands.Bot(command_prefix='g.', intents=discord.Intents.all())
 async def on_ready() -> None:
     print('-- Bot ready --')
     filename = slice(5, -3)
-    for path in glob.glob('cogs/*.py'):
+    for path in glob('cogs/*.py'):
         bot.load_extension('cogs.' + path[filename])
 
 if __name__ == '__main__':
