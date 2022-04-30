@@ -21,7 +21,7 @@ def is_everyone_mentionable(role: discord.Role) -> bool:
 
 
 
-def safety_embed_message(info: dict) -> discord.Emed:
+def safety_embed_message(info: dict) -> discord.Embed:
     embed = discord.Embed(title='安全檢測', description='檢測有可能危害伺服器的問題')
 
     if info['everyone_mentionable']:
