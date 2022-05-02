@@ -7,7 +7,7 @@ class Ping(commands.Cog):
 
     @commands.command()
     async def ping(self, ctx: Context) -> None:
-        await ctx.send("Hi, this is a slash command from a cog!")
+        await ctx.send("Pong")
 
 def setup(bot: commands.Bot) -> None:
     bot.add_cog(Ping(bot))
